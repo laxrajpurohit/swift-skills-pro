@@ -20,13 +20,14 @@ problems only — no nitpicking.
 
 Trigger: `/swiftui-pro` or natural language ("review this SwiftUI view").
 
-## Core assumptions
+## Baseline this skill writes for
 
-- iOS 26 is the default deployment target.
-- Swift 6.2+, modern Swift concurrency.
-- Prefer SwiftUI; avoid UIKit unless asked.
-- One type per file; folder layout by feature.
-- No third-party frameworks without asking.
+- Pure SwiftUI first — only drop to UIKit when the user explicitly needs it.
+- Concurrency is structured async/await; no GCD unless there's a concrete reason.
+- New dependencies are a conversation, not a default — ask before adding one.
+- File hygiene: one declaration per file, grouped into folders by feature.
+- Language/OS target follows the project; if unset, assume the current shipping
+  Swift and SDK rather than legacy defaults.
 
 ## State management
 
@@ -142,5 +143,6 @@ Use `.task` (auto-cancelled on disappear), not `onAppear { Task { } }`.
 
 ## Output format (when reviewing)
 
-Group by file. Per issue: file:line, rule name, brief before/after fix. Skip clean files.
-End with a prioritized summary.
+Walk the code top to bottom. For each real problem give: the `file:line`, a one-line
+statement of what's wrong, and a tight before → after snippet. Don't mention files that
+are already fine. Close with the two or three fixes that matter most, in priority order.
