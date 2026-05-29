@@ -1,0 +1,10 @@
+{
+  "name": "swift-concurrency-pro",
+  "version": "1.0.0",
+  "description": "async/await, actors, Sendable, and strict concurrency for Swift 6.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}
