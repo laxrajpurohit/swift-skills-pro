@@ -76,11 +76,10 @@ cp -R swift-skills-pro/swiftui-pro ~/.claude/skills/swiftui-pro
 
 Natural-language prompts work too ("review this SwiftUI view").
 
-## Acknowledgements
+## About
 
-Inspired by the Swift agent-skills community, including Paul Hudson's
-[swift-agent-skills](https://github.com/twostraws/swift-agent-skills) directory. All
-content in this repository is original; no skill text was copied from other authors.
+All skills in this repository are original, written from scratch for the modern Swift
+toolchain (Swift 6 / iOS 26). Nothing here is copied from any other project or author.
 
 ## Contributing
 
