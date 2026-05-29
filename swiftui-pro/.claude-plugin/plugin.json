@@ -1,0 +1,10 @@
+{
+  "name": "swiftui-pro",
+  "version": "1.0.0",
+  "description": "Modern SwiftUI: @Observable, NavigationStack, layout, performance, and anti-patterns.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}
