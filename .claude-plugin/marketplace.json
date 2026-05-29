@@ -1,0 +1,54 @@
+{
+  "name": "swift-skills-pro",
+  "owner": { "name": "Lax Rajpurohit" },
+  "metadata": {
+    "description": "Modern, original agent skills for Swift and Apple-platform development",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "swiftui-pro",
+      "source": "./swiftui-pro",
+      "description": "Modern SwiftUI: @Observable, NavigationStack, layout, performance, and anti-patterns.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["swiftui", "swift", "ios", "apple"]
+    },
+    {
+      "name": "swift-concurrency-pro",
+      "source": "./swift-concurrency-pro",
+      "description": "async/await, actors, Sendable, and strict concurrency for Swift 6.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["swift", "concurrency", "async", "actors", "sendable"]
+    },
+    {
+      "name": "swiftdata-pro",
+      "source": "./swiftdata-pro",
+      "description": "SwiftData modeling, queries, migrations, and CloudKit sync.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["swiftdata", "swift", "persistence", "cloudkit"]
+    },
+    {
+      "name": "swift-testing-pro",
+      "source": "./swift-testing-pro",
+      "description": "Swift Testing framework: @Test, #expect, traits, parameterized tests, XCTest migration.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["swift", "testing", "swift-testing", "xctest"]
+    }
+  ]
+}
