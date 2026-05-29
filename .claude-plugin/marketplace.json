@@ -49,6 +49,83 @@
       "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
       "license": "MIT",
       "keywords": ["swift", "testing", "swift-testing", "xctest"]
+    },
+    {
+      "name": "swift-language-pro",
+      "source": "./swift-language-pro",
+      "description": "Idiomatic modern Swift: value types, optionals, error handling, generics, and API design.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["swift", "language", "api-design", "optionals", "generics"]
+    },
+    {
+      "name": "swift-accessibility-pro",
+      "source": "./swift-accessibility-pro",
+      "description": "iOS accessibility: VoiceOver, Dynamic Type, contrast, Reduce Motion, and testing.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["accessibility", "voiceover", "dynamic-type", "ios", "a11y"]
+    },
+    {
+      "name": "app-intents-pro",
+      "source": "./app-intents-pro",
+      "description": "App Intents: AppIntent, parameters, entities, App Shortcuts, Siri and Spotlight.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["app-intents", "siri", "shortcuts", "spotlight", "ios"]
+    },
+    {
+      "name": "swift-architecture-pro",
+      "source": "./swift-architecture-pro",
+      "description": "App architecture: feature modularization, MVVM with @Observable, dependency injection, routing.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["architecture", "mvvm", "dependency-injection", "modularization", "swift"]
+    },
+    {
+      "name": "swift-performance-pro",
+      "source": "./swift-performance-pro",
+      "description": "Performance: Instruments, SwiftUI render cost, memory and retain cycles, launch time, lists.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["performance", "instruments", "memory", "swiftui", "optimization"]
+    },
+    {
+      "name": "swift-security-pro",
+      "source": "./swift-security-pro",
+      "description": "iOS security: Keychain, Data Protection, ATS/TLS, secrets handling, biometric auth.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["security", "keychain", "biometrics", "tls", "ios"]
+    },
+    {
+      "name": "core-data-pro",
+      "source": "./core-data-pro",
+      "description": "Core Data: modeling, NSPersistentContainer, background contexts, fetch requests, migration.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["core-data", "persistence", "nspersistentcontainer", "migration", "ios"]
     }
   ]
 }

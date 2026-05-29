@@ -1,0 +1,10 @@
+{
+  "name": "swift-security-pro",
+  "version": "1.0.0",
+  "description": "iOS security: Keychain, Data Protection, ATS/TLS, secrets handling, biometric auth.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}

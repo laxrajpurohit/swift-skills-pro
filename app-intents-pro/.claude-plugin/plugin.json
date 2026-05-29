@@ -1,0 +1,10 @@
+{
+  "name": "app-intents-pro",
+  "version": "1.0.0",
+  "description": "App Intents: AppIntent, parameters, entities, App Shortcuts, Siri and Spotlight.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}

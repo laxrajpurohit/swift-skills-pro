@@ -21,6 +21,13 @@ produce.
 | `swift-concurrency-pro` | async/await, actors, `Sendable`, Swift 6 strict concurrency. |
 | `swiftdata-pro` | `@Model`, `@Query`, migrations, CloudKit sync. |
 | `swift-testing-pro` | Swift Testing — `@Test`, `#expect`, traits, parameterized tests. |
+| `swift-language-pro` | Idiomatic Swift — value types, optionals, error handling, generics, API design. |
+| `swift-accessibility-pro` | VoiceOver, Dynamic Type, contrast, Reduce Motion, a11y testing. |
+| `app-intents-pro` | App Intents — Siri, Shortcuts, Spotlight, `AppEntity`, App Shortcuts. |
+| `swift-architecture-pro` | Feature modularization, MVVM, dependency injection, routing. |
+| `swift-performance-pro` | Instruments, render cost, memory/retain cycles, launch time. |
+| `swift-security-pro` | Keychain, Data Protection, ATS/TLS, secrets, biometrics. |
+| `core-data-pro` | Modeling, background contexts, fetch requests, batching, migration. |
 
 ## Install
 
@@ -59,6 +66,13 @@ cp -R swift-skills-pro/swiftui-pro ~/.claude/skills/swiftui-pro
 | swift-concurrency-pro | `/swift-concurrency-pro` |
 | swiftdata-pro | `/swiftdata-pro` |
 | swift-testing-pro | `/swift-testing-pro` |
+| swift-language-pro | `/swift-language-pro` |
+| swift-accessibility-pro | `/swift-accessibility-pro` |
+| app-intents-pro | `/app-intents-pro` |
+| swift-architecture-pro | `/swift-architecture-pro` |
+| swift-performance-pro | `/swift-performance-pro` |
+| swift-security-pro | `/swift-security-pro` |
+| core-data-pro | `/core-data-pro` |
 
 Natural-language prompts work too ("review this SwiftUI view").
 
