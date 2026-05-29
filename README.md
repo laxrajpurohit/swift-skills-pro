@@ -23,6 +23,7 @@ each rule with `❌ wrong` / `✅ right` examples plus a mistakes checklist.
 
 ## 📚 Table of Contents
 
+- [Why use this?](#-why-use-this)
 - [Quick start](#-quick-start)
 - [Skills](#-skills)
 - [Install](#-install)
@@ -31,6 +32,28 @@ each rule with `❌ wrong` / `✅ right` examples plus a mistakes checklist.
 - [About](#-about)
 - [Contributing](#-contributing)
 - [License](#-license)
+
+## 💡 Why use this?
+
+Without these skills, an AI assistant gives generic answers and often reaches for outdated
+APIs. With them installed, your tool writes and reviews Swift like a senior Apple-platform
+engineer.
+
+- **🎯 Modern by default** — always Swift 6 / iOS 26 patterns. No `foregroundColor`,
+  `NavigationView`, or `ObservableObject` creeping back in.
+- **🛡️ Catches real bugs** — retain cycles, data races, force-unwraps, deprecated APIs,
+  missing accessibility, leaked secrets. Each skill ships a mistakes checklist.
+- **🧩 11 topics, one install** — SwiftUI, concurrency, data, testing, architecture,
+  performance, security, and more. Most skill repos cover just one.
+- **⚡ Cheap on context** — a skill loads only when triggered (~80–90 tokens idle,
+  ~1.3–1.4k on use). No bloat in every prompt.
+- **🔍 Built-in code review** — every skill has a clear `file:line → problem → fix` output
+  format, so PR and diff reviews get faster.
+- **👥 Consistent across a team** — everyone's AI follows the same modern conventions.
+- **🆓 Free & portable** — MIT licensed, works in Claude Code, Codex, Cursor, Windsurf.
+
+> **In short:** safer, more modern, better Swift code from your AI — without memorising
+> every best practice yourself.
 
 ## 🚀 Quick start
 
