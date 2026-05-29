@@ -1,0 +1,10 @@
+{
+  "name": "swift-architecture-pro",
+  "version": "1.0.0",
+  "description": "App architecture: feature modularization, MVVM with @Observable, dependency injection, routing.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}

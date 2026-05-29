@@ -1,0 +1,10 @@
+{
+  "name": "swift-language-pro",
+  "version": "1.0.0",
+  "description": "Idiomatic modern Swift: value types, optionals, error handling, generics, and API design.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}

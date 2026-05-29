@@ -1,0 +1,10 @@
+{
+  "name": "swift-accessibility-pro",
+  "version": "1.0.0",
+  "description": "iOS accessibility: VoiceOver, Dynamic Type, contrast, Reduce Motion, and testing.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}

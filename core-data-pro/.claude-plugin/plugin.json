@@ -1,0 +1,10 @@
+{
+  "name": "core-data-pro",
+  "version": "1.0.0",
+  "description": "Core Data: modeling, NSPersistentContainer, background contexts, fetch requests, migration.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}
