@@ -124,10 +124,25 @@ Swap `swiftui-pro` for any skill name (e.g. `swift-concurrency-pro@swift-skills-
 <summary><b>npx (cross-tool)</b></summary>
 
 ```bash
-npx skills add https://github.com/laxrajpurohit/swift-skills-pro --skill swiftui-pro
+npx skills add https://github.com/laxrajpurohit/swift-skills-pro
 ```
 
 Requires Node.js (`brew install node`).
+
+> **Note for Claude Code users:** `npx skills` installs to `~/.agents/skills/`, but Claude Code reads from `~/.claude/skills/`. After installing, copy the skills over:
+>
+> ```bash
+> mkdir -p ~/.claude/skills
+> cp -r ~/.agents/skills/swiftui-pro ~/.claude/skills/swiftui-pro
+> ```
+>
+> Or copy all at once:
+>
+> ```bash
+> for skill in app-intents-pro core-data-pro swift-accessibility-pro swift-architecture-pro swift-concurrency-pro swift-language-pro swift-performance-pro swift-security-pro swift-testing-pro swiftdata-pro swiftui-pro; do
+>   cp -r ~/.agents/skills/"$skill" ~/.claude/skills/"$skill"
+> done
+> ```
 
 </details>
 
