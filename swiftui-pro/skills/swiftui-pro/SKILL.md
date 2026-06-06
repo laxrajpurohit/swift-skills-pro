@@ -20,7 +20,7 @@ problems only — no nitpicking.
 
 Trigger: `/swiftui-pro` or natural language ("review this SwiftUI view").
 
-## Baseline this skill writes for
+## Core principles
 
 - Pure SwiftUI first — only drop to UIKit when the user explicitly needs it.
 - Concurrency is structured async/await; no GCD unless there's a concrete reason.
