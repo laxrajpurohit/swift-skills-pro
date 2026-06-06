@@ -12,6 +12,7 @@ coding tool.
 [![Swift 6](https://img.shields.io/badge/Swift-6-F05138?logo=swift&logoColor=white)](https://swift.org)
 [![iOS 26](https://img.shields.io/badge/iOS-26-000000?logo=apple&logoColor=white)](https://developer.apple.com)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-8A63D2.svg)](https://claude.com/claude-code)
+[![GitHub stars](https://img.shields.io/github/stars/laxrajpurohit/swift-skills-pro?style=social)](https://github.com/laxrajpurohit/swift-skills-pro/stargazers)
 
 </div>
 
@@ -67,6 +68,15 @@ engineer.
 ```
 
 That's it — install any of the 11 skills the same way.
+
+**Install all skills at once:**
+
+```bash
+/plugin marketplace add laxrajpurohit/swift-skills-pro
+for skill in swiftui-pro swift-concurrency-pro swiftdata-pro core-data-pro swift-language-pro swift-testing-pro swift-architecture-pro swift-performance-pro swift-accessibility-pro app-intents-pro swift-security-pro; do
+  /plugin install "$skill@swift-skills-pro"
+done
+```
 
 ## 🧩 Skills
 
@@ -144,6 +154,16 @@ Trigger an installed skill with its slash command — or just ask in natural lan
 | swift-testing-pro | `/swift-testing-pro` | | app-intents-pro | `/app-intents-pro` |
 | swift-language-pro | `/swift-language-pro` | | swift-security-pro | `/swift-security-pro` |
 | core-data-pro | `/core-data-pro` | | | |
+
+## 🧪 Compatibility
+
+| Tool | Status | Notes |
+|------|--------|-------|
+| Claude Code | ✅ Tested | Full plugin marketplace support |
+| Cursor | ✅ Compatible | Via skills directory |
+| Windsurf | ✅ Compatible | Via skills directory |
+| Codex | ✅ Compatible | Via skills directory |
+| Other agent tools | 🔄 Should work | Any tool supporting Agent-Skills format |
 
 ## 🔒 Safety
 
