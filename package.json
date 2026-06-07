@@ -1,0 +1,45 @@
+{
+  "name": "swift-skills-cli",
+  "version": "1.1.0",
+  "description": "Install Swift AI coding skills to all agent paths (Claude Code, Cursor, Codex, Windsurf)",
+  "bin": {
+    "swift-skills-cli": "bin/cli.js"
+  },
+  "keywords": [
+    "swift",
+    "skills",
+    "claude-code",
+    "cursor",
+    "codex",
+    "windsurf",
+    "ai-coding",
+    "ios",
+    "swiftui"
+  ],
+  "author": "laxrajpurohit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laxrajpurohit/swift-skills-pro.git"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "app-intents-pro/",
+    "core-data-pro/",
+    "swift-accessibility-pro/",
+    "swift-architecture-pro/",
+    "swift-concurrency-pro/",
+    "swift-language-pro/",
+    "swift-performance-pro/",
+    "swift-security-pro/",
+    "swift-testing-pro/",
+    "swiftdata-pro/",
+    "swiftui-pro/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
