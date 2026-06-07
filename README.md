@@ -121,28 +121,26 @@ Swap `swiftui-pro` for any skill name (e.g. `swift-concurrency-pro@swift-skills-
 </details>
 
 <details>
-<summary><b>npx (cross-tool)</b></summary>
+<summary><b>npx (cross-tool — recommended)</b></summary>
 
 ```bash
-npx skills add https://github.com/laxrajpurohit/swift-skills-pro
+# Install all 11 skills to all agent paths at once
+npx swift-skills-cli install
+
+# Install a single skill
+npx swift-skills-cli install swiftui-pro
+
+# See what's installed where
+npx swift-skills-cli list
+
+# Uninstall a skill
+npx swift-skills-cli uninstall swiftui-pro
 ```
 
-Requires Node.js (`brew install node`).
+Installs to **all** agent paths automatically:
+`~/.claude/skills/`, `~/.cursor/skills/`, `~/.codex/skills/`, `~/.codeium/windsurf/skills/`, `~/.agents/skills/`
 
-> **Note for Claude Code users:** `npx skills` installs to `~/.agents/skills/`, but Claude Code reads from `~/.claude/skills/`. After installing, copy the skills over:
->
-> ```bash
-> mkdir -p ~/.claude/skills
-> cp -r ~/.agents/skills/swiftui-pro ~/.claude/skills/swiftui-pro
-> ```
->
-> Or copy all at once:
->
-> ```bash
-> for skill in app-intents-pro core-data-pro swift-accessibility-pro swift-architecture-pro swift-concurrency-pro swift-language-pro swift-performance-pro swift-security-pro swift-testing-pro swiftdata-pro swiftui-pro; do
->   cp -r ~/.agents/skills/"$skill" ~/.claude/skills/"$skill"
-> done
-> ```
+Requires Node.js (`brew install node`).
 
 </details>
 
