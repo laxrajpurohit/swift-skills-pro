@@ -1,6 +1,6 @@
 {
   "name": "swift-skills-cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Install Swift AI coding skills to all agent paths (Claude Code, Cursor, Codex, Windsurf)",
   "bin": {
     "swift-skills-cli": "bin/cli.js"
@@ -30,6 +30,7 @@
     "swift-accessibility-pro/",
     "swift-architecture-pro/",
     "swift-concurrency-pro/",
+    "swift-guardrails-pro/",
     "swift-language-pro/",
     "swift-performance-pro/",
     "swift-security-pro/",

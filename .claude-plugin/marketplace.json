@@ -3,7 +3,7 @@
   "owner": { "name": "Lax Rajpurohit" },
   "metadata": {
     "description": "Modern, original agent skills for Swift and Apple-platform development",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -126,6 +126,17 @@
       "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
       "license": "MIT",
       "keywords": ["core-data", "persistence", "nspersistentcontainer", "migration", "ios"]
+    },
+    {
+      "name": "swift-guardrails-pro",
+      "source": "./swift-guardrails-pro",
+      "description": "Ratcheted SwiftLint, copy-paste detection, and Xcode project malware scan. Runs automatically after Swift edits and before commits.",
+      "version": "1.0.0",
+      "author": { "name": "Lax Rajpurohit" },
+      "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+      "license": "MIT",
+      "keywords": ["swift", "swiftlint", "lint", "duplicate-code", "pre-commit", "security"]
     }
   ]
 }

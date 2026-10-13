@@ -43,6 +43,12 @@ const SKILLS = [
     name: 'app-intents-pro',
     description: 'App Intents — Siri, Shortcuts, Spotlight with AppIntent, parameters, AppEntity',
   },
+  {
+    name: 'swift-guardrails-pro',
+    description: 'Guardrails — ratcheted SwiftLint, copy-paste detection, Xcode project malware scan',
+    // Registers scripts/agent-hook.sh in each installed agent's hook config.
+    hooks: true,
+  },
 ];
 
 function findSkill(name) {

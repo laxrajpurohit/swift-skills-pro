@@ -1,0 +1,10 @@
+{
+  "name": "swift-guardrails-pro",
+  "version": "1.0.0",
+  "description": "Ratcheted SwiftLint, copy-paste detection, Xcode project malware scan, and pre-commit + Claude Code hooks for Swift repos.",
+  "author": { "name": "Lax Rajpurohit" },
+  "homepage": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "repository": "https://github.com/laxrajpurohit/swift-skills-pro",
+  "license": "MIT",
+  "skills": "./skills/"
+}

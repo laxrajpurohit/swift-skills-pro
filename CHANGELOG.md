@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-10-13
+
+### Added
+
+- **swift-guardrails-pro** — Ratcheted SwiftLint, copy-paste detection (jscpd), and an
+  Xcode `project.pbxproj` malware scan, checked on changed lines only. As a Claude Code
+  plugin or via `npx swift-skills-cli install`, it runs automatically after every Swift
+  edit and before every `git commit` in Claude Code, Cursor, Codex, and Windsurf, with no
+  per-project setup.
+
+### Changed
+
+- `swift-skills-cli` installs and uninstalls the whole skill folder, not just `SKILL.md`,
+  so skills can ship scripts and templates.
+- `swift-skills-cli install` registers agent hooks for skills that ship them, merging
+  into existing hook configs; `--no-hooks` skips it, `uninstall` removes them.
+
 ## [1.0.0] — 2026-06-06
 
 ### Added
@@ -23,4 +40,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Marketplace configuration with all 11 skills.
 - Full documentation with install guides for Claude Code, npx, and manual setup.
 
+[1.1.0]: https://github.com/laxrajpurohit/swift-skills-pro/releases/tag/v1.1.0
 [1.0.0]: https://github.com/laxrajpurohit/swift-skills-pro/releases/tag/v1.0.0

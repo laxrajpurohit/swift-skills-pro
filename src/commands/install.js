@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const { AGENTS, skillPath, skillDir } = require('../agents');
+const { AGENTS, skillDir } = require('../agents');
 const { SKILLS, findSkill, allSkillNames } = require('../skills');
-const { ensureDir, copyFile, fileExists, cloneRepo, cleanupDir, c } = require('../utils');
+const { copyDir, cleanupDir, fileExists, cloneRepo, c } = require('../utils');
+const { presentAgents, installHooks } = require('../hooks');
 
 // When running via npx, skills are bundled in the package.
 // Fallback: clone the repo if bundled skills not found.
@@ -16,7 +17,7 @@ function getSkillSource(skillName) {
   return null;
 }
 
-module.exports = function install(skillArg) {
+module.exports = function install(skillArg, { hooks = true } = {}) {
   let skillNames;
   if (skillArg) {
     const skill = findSkill(skillArg);
@@ -44,6 +45,9 @@ module.exports = function install(skillArg) {
   }
 
   console.log(`\n${c.bold('Installing skills...')}`);
+
+  // Checked before copying: copying creates the agent folders.
+  const present = hooks ? presentAgents() : [];
 
   const results = [];
 
@@ -76,10 +80,12 @@ module.exports = function install(skillArg) {
 
     const agentResults = [];
     for (const agent of AGENTS) {
-      const dest = skillPath(agent, skillName);
+      const dest = skillDir(agent, skillName);
       try {
-        copyFile(srcFile, dest);
-        agentResults.push({ agent: agent.name, ok: true });
+        // The whole skill folder: some skills ship scripts and templates next to SKILL.md.
+        copyDir(path.dirname(srcFile), dest);
+        const hook = findSkill(skillName).hooks ? installHooks(skillName, agent, present) : null;
+        agentResults.push({ agent: agent.name, ok: true, hook });
       } catch (err) {
         agentResults.push({ agent: agent.name, ok: false, error: err.message });
       }
@@ -114,6 +120,13 @@ module.exports = function install(skillArg) {
     }
     if (failAgents.length > 0) {
       console.log(`    ${c.red('✗')} Failed: ${failAgents.join(', ')}`);
+    }
+    for (const a of r.agents.filter(a => a.hook)) {
+      if (a.hook.ok) {
+        console.log(`    ${c.cyan('↳')} hooks added to ${a.hook.file}${a.hook.note ? c.dim(`  (${a.hook.note})`) : ''}`);
+      } else {
+        console.log(`    ${c.yellow('!')} hooks not added to ${a.hook.file}: ${a.hook.error}`);
+      }
     }
   }
 

@@ -8,7 +8,7 @@ Write better SwiftUI, Swift concurrency, SwiftData, and tests — straight from 
 coding tool.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-11-orange.svg)](#-skills)
+[![Skills](https://img.shields.io/badge/skills-12-orange.svg)](#-skills)
 [![Swift 6](https://img.shields.io/badge/Swift-6-F05138?logo=swift&logoColor=white)](https://swift.org)
 [![iOS 26](https://img.shields.io/badge/iOS-26-000000?logo=apple&logoColor=white)](https://developer.apple.com)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-8A63D2.svg)](https://claude.com/claude-code)
@@ -44,7 +44,7 @@ engineer.
   `NavigationView`, or `ObservableObject` creeping back in.
 - **🛡️ Catches real bugs** — retain cycles, data races, force-unwraps, deprecated APIs,
   missing accessibility, leaked secrets. Each skill ships a mistakes checklist.
-- **🧩 11 topics, one install** — SwiftUI, concurrency, data, testing, architecture,
+- **🧩 12 topics, one install** — SwiftUI, concurrency, data, testing, architecture,
   performance, security, and more. Most skill repos cover just one.
 - **⚡ Cheap on context** — a skill loads only when triggered (~80–90 tokens idle,
   ~1.3–1.4k on use). No bloat in every prompt.
@@ -67,13 +67,13 @@ engineer.
 /swiftui-pro
 ```
 
-That's it — install any of the 11 skills the same way.
+That's it — install any of the 12 skills the same way.
 
 **Install all skills at once:**
 
 ```bash
 /plugin marketplace add laxrajpurohit/swift-skills-pro
-for skill in swiftui-pro swift-concurrency-pro swiftdata-pro core-data-pro swift-language-pro swift-testing-pro swift-architecture-pro swift-performance-pro swift-accessibility-pro app-intents-pro swift-security-pro; do
+for skill in swiftui-pro swift-concurrency-pro swiftdata-pro core-data-pro swift-language-pro swift-testing-pro swift-architecture-pro swift-performance-pro swift-accessibility-pro app-intents-pro swift-security-pro swift-guardrails-pro; do
   /plugin install "$skill@swift-skills-pro"
 done
 ```
@@ -97,6 +97,7 @@ done
 | `swift-testing-pro` | Swift Testing — `@Test`, `#expect`, traits, parameterized tests. |
 | `swift-architecture-pro` | Feature modularization, MVVM, dependency injection, routing. |
 | `swift-performance-pro` | Instruments, render cost, memory/retain cycles, launch time. |
+| `swift-guardrails-pro` | Ratcheted SwiftLint + copy-paste detection + Xcode project malware scan. Runs on its own — see below. |
 
 ### Platform & integration
 
@@ -105,6 +106,35 @@ done
 | `swift-accessibility-pro` | VoiceOver, Dynamic Type, contrast, Reduce Motion, a11y testing. |
 | `app-intents-pro` | App Intents — Siri, Shortcuts, Spotlight, `AppEntity`, App Shortcuts. |
 | `swift-security-pro` | Keychain, Data Protection, ATS/TLS, secrets, biometrics. |
+
+## 🚧 Guardrails: rules that enforce themselves
+
+The other skills tell your AI what good Swift looks like. `swift-guardrails-pro`
+**checks** it, with zero setup:
+
+```bash
+/plugin install swift-guardrails-pro@swift-skills-pro   # Claude Code
+npx swift-skills-cli install swift-guardrails-pro       # Claude Code, Cursor, Codex, Windsurf
+```
+
+| When | What runs |
+|------|-----------|
+| Your AI edits a `.swift` file | SwiftLint + copy-paste check on the lines it changed → the AI fixes them |
+| Your AI runs `git commit` | Xcode project malware scan + lint + copy-paste on staged lines → commit blocked until clean |
+
+Works in **Claude Code, Cursor, Codex, and Windsurf**: the npx installer adds the hooks to
+each agent it finds on your machine and leaves your existing hooks alone
+(`--no-hooks` to skip; `uninstall` removes them). Codex asks you to trust new hooks once via `/hooks`.
+
+- **Ratchet, not a wall** — only new or changed lines are checked. Legacy code stays quiet.
+- **Copy-paste detection** — a pasted block of 8+ lines gets flagged with both locations
+  and a hint to extract it into a shared component.
+- **Xcode project malware scan** — blocks `project.pbxproj` build phases that decode
+  base64/hex, pipe `curl` into a shell, or hide background jobs.
+- **Nothing to configure** — source folders, base branch, and lint rules are detected.
+  Bring your own `.swiftlint.yml` or use the bundled one.
+
+Needs `brew install swiftlint jscpd`. A missing tool skips its check.
 
 ## 📦 Install
 
@@ -124,7 +154,7 @@ Swap `swiftui-pro` for any skill name (e.g. `swift-concurrency-pro@swift-skills-
 <summary><b>npx (cross-tool — recommended)</b></summary>
 
 ```bash
-# Install all 11 skills to all agent paths at once
+# Install all 12 skills to all agent paths at once
 npx swift-skills-cli install
 
 # Install a single skill
@@ -166,7 +196,7 @@ Trigger an installed skill with its slash command — or just ask in natural lan
 | swiftdata-pro | `/swiftdata-pro` | | swift-accessibility-pro | `/swift-accessibility-pro` |
 | swift-testing-pro | `/swift-testing-pro` | | app-intents-pro | `/app-intents-pro` |
 | swift-language-pro | `/swift-language-pro` | | swift-security-pro | `/swift-security-pro` |
-| core-data-pro | `/core-data-pro` | | | |
+| core-data-pro | `/core-data-pro` | | swift-guardrails-pro | `/swift-guardrails-pro` |
 
 ## 🧪 Compatibility
 

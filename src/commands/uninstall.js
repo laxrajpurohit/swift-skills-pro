@@ -1,6 +1,7 @@
 const { AGENTS, skillPath, skillDir } = require('../agents');
 const { SKILLS, findSkill, allSkillNames } = require('../skills');
-const { removeFile, removeDirIfEmpty, fileExists, c } = require('../utils');
+const { cleanupDir, fileExists, c } = require('../utils');
+const { uninstallHooks } = require('../hooks');
 
 module.exports = function uninstall(skillArg) {
   let skillNames;
@@ -24,13 +25,17 @@ module.exports = function uninstall(skillArg) {
     const agentResults = [];
 
     for (const agent of AGENTS) {
+      // Hooks first: they point at scripts inside the folder about to be removed.
+      const hook = uninstallHooks(skillName, agent);
+      if (hook && hook.ok) console.log(`  ${c.dim('↳')} hooks removed from ${hook.file}`);
+      if (hook && !hook.ok) console.log(`  ${c.yellow('!')} could not update ${hook.file}: ${hook.error}`);
+
       const filePath = skillPath(agent, skillName);
       const dirPath = skillDir(agent, skillName);
 
       if (fileExists(filePath)) {
         try {
-          removeFile(filePath);
-          removeDirIfEmpty(dirPath);
+          cleanupDir(dirPath);
           agentResults.push({ agent: agent.name, removed: true });
         } catch (err) {
           agentResults.push({ agent: agent.name, removed: false, error: err.message });

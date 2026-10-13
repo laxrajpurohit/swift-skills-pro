@@ -1,0 +1,96 @@
+# SwiftLint config bundled with swift-guardrails-pro. Used automatically when a
+# repo has no .swiftlint.yml of its own; copy it into the repo to customise.
+#
+# Runs a small, high-signal rule set, not SwiftLint's full default list.
+# Enforcement is per changed line (scripts/lint-changed.sh), so
+# existing code never turns red; only new code has to follow these rules.
+#
+# Add project rules under custom_rules. The commented "design tokens" block at
+# the bottom shows the pattern: forbid the raw value everywhere except the one
+# file that defines the token.
+
+only_rules:
+  - custom_rules
+  - force_try
+  - force_cast
+
+excluded:
+  - Pods
+  - .build
+  - DerivedData
+
+custom_rules:
+
+  legacy_navigation_view:
+    name: "NavigationView"
+    regex: '\bNavigationView\s*\{'
+    message: "NavigationView is deprecated. Use NavigationStack (or NavigationSplitView for multi-column)."
+    severity: error
+    excluded_match_kinds: [comment, doccomment, string]
+
+  legacy_foreground_color:
+    name: "foregroundColor"
+    regex: '\.foregroundColor\('
+    message: "foregroundColor(_:) is deprecated. Use foregroundStyle(_:)."
+    severity: warning
+    excluded_match_kinds: [comment, doccomment]
+
+  legacy_observable_object:
+    name: "ObservableObject"
+    regex: ':\s*(\w+\s*,\s*)*ObservableObject\b|@Published\b|@StateObject\b|@ObservedObject\b'
+    message: "Use @Observable with @State / plain properties / @Bindable instead of ObservableObject, @Published, @StateObject, @ObservedObject."
+    severity: warning
+    excluded_match_kinds: [comment, doccomment]
+
+  main_queue_dispatch:
+    name: "DispatchQueue.main"
+    regex: '\bDispatchQueue\.main\.(async|sync)\b'
+    message: "Use @MainActor (or `await MainActor.run`) instead of DispatchQueue.main in Swift concurrency code."
+    severity: warning
+    excluded_match_kinds: [comment, doccomment]
+
+  inline_date_formatter:
+    name: "Inline DateFormatter"
+    regex: '(?<!ISO8601)\bDateFormatter\(\)'
+    message: "DateFormatter is expensive to create. Use Date.FormatStyle (`date.formatted(...)`) or one cached shared formatter."
+    severity: warning
+    excluded_match_kinds: [comment, doccomment]
+
+  print_statement:
+    name: "print"
+    regex: '^\s*(Swift\.)?print\('
+    message: "Use os.Logger. print() ships to production and cannot be filtered or redacted."
+    severity: warning
+    excluded_match_kinds: [comment, doccomment]
+
+  insecure_http_url:
+    name: "Plain http URL"
+    regex: '"http://(?!localhost|127\.0\.0\.1)'
+    message: "Use https. Plain http is blocked by App Transport Security and exposes traffic."
+    severity: error
+    excluded_match_kinds: [comment, doccomment]
+
+  hardcoded_secret:
+    name: "Hardcoded secret"
+    regex: '(?i)\b(api_?key|secret|access_?token|client_?secret|password)\s*(:\s*String\s*)?=\s*"[^"]{8,}"'
+    message: "Never commit secrets. Load them from the Keychain, a build-time config that is git-ignored, or your backend."
+    severity: error
+    excluded_match_kinds: [comment, doccomment]
+
+  # ── Design tokens (example; uncomment and point at your theme file) ──────
+  #
+  # hardcoded_color:
+  #   name: "Hardcoded color"
+  #   regex: '\bColor\((red|hex):|#colorLiteral\('
+  #   message: "Use a color token from Theme/Tokens.swift. If none fits, add one there."
+  #   severity: error
+  #   excluded_match_kinds: [comment, doccomment]
+  #   excluded: ".*/Theme/Tokens\\.swift"
+  #
+  # system_font_size:
+  #   name: "Raw font size"
+  #   regex: '\.system\(\s*size:'
+  #   message: "Use a typography token from Theme/Tokens.swift so text scales consistently."
+  #   severity: error
+  #   excluded_match_kinds: [comment, doccomment]
+  #   excluded: ".*/Theme/Tokens\\.swift"

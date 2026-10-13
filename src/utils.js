@@ -12,6 +12,22 @@ function copyFile(src, dest) {
   fs.copyFileSync(src, dest);
 }
 
+// Recursive copy that keeps file modes, so bundled scripts stay executable.
+// fs.cpSync needs Node 16.7+, the package supports 16.0.
+function copyDir(src, dest) {
+  ensureDir(dest);
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const from = path.join(src, entry.name);
+    const to = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      copyDir(from, to);
+    } else if (entry.isFile()) {
+      fs.copyFileSync(from, to);
+      fs.chmodSync(to, fs.statSync(from).mode);
+    }
+  }
+}
+
 function removeFile(filePath) {
   if (fs.existsSync(filePath)) {
     fs.unlinkSync(filePath);
@@ -65,6 +81,7 @@ const c = {
 module.exports = {
   ensureDir,
   copyFile,
+  copyDir,
   removeFile,
   removeDirIfEmpty,
   fileExists,

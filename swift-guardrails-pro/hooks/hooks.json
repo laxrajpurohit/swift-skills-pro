@@ -1,0 +1,29 @@
+{
+  "description": "swift-guardrails: lint + copy-paste check after each Swift edit, full check before git commit",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/skills/swift-guardrails-pro/scripts/agent-hook.sh\" claude post-edit",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/skills/swift-guardrails-pro/scripts/agent-hook.sh\" claude pre-commit",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
